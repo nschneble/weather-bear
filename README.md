@@ -1,4 +1,4 @@
-# Weather Bear
+# WeatherBear
 *Just the bare essentials of a daily forecast*
 
 This README would normally document whatever steps are necessary to get the
