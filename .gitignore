@@ -39,3 +39,6 @@
 
 # Hide Nova config files
 .nova
+
+# macOS files
+.DS_Store
