@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_24_180122) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_24_180538) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -19,6 +19,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_24_180122) do
     t.datetime "cached_at", precision: nil
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "scale"
+    t.integer "temperature"
+    t.integer "high"
+    t.integer "low"
+    t.string "condition"
+    t.string "icon"
   end
 
 end
