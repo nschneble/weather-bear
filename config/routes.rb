@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :forecasts
   resources :lookups
 
   # health status that returns 200 if the app boots with no exceptions
