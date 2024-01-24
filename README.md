@@ -10,6 +10,8 @@
 ## Setup
 
 * Clone this repo!
+* Copy application.yml.template => application.yml
+* Fill in valid API keys for [geocoding](https://geocode.maps.co) and [weather](https://www.weatherapi.com)
 * Create the database (./bin/rails db:create)
 * Run migrations (./bin/rails db:migrate)
 * Start up the server! (./bin/dev)
