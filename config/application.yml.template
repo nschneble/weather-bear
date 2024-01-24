@@ -1,5 +1,10 @@
 # create a copy of this file and rename it to "application.yml", then
 # update the secrets below and be on your merry way
 
+# NOTE: THIS TEMPLATE HAS 100% FAKE VALUES, DON'T USE THEM
+
+# used for forward geocoding to find zip code
+geocoding_api_key: "9b0e5d3a8f1c2b7e4d6a0f9c7b2e1d8"
+
 # used to query WeatherAPI.com
 weather_api_key: "3a7f8b4e2d1c6f0d5e9a2c8b7f3e1d4"
