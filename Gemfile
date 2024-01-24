@@ -68,3 +68,6 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+# Ain't no party like a httparty
+gem "httparty"
