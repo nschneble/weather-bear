@@ -17,7 +17,7 @@ class LookupsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create lookup" do
     assert_difference("Lookup.count") do
-      post lookups_url, params: { lookup: { cached_at: @lookup.cached_at, response: @lookup.response, zip_code: @lookup.zip_code } }
+      post lookups_url, params: { lookup: { cached_at: @lookup.cached_at, scale: @lookup.scale, temperature: @lookup.temperature, high: @lookup.high, low: @lookup.low, condition: @lookup.condition, icon: @lookup.icon, zip_code: @lookup.zip_code } }
     end
 
     assert_redirected_to lookup_url(Lookup.last)
@@ -34,7 +34,7 @@ class LookupsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update lookup" do
-    patch lookup_url(@lookup), params: { lookup: { cached_at: @lookup.cached_at, response: @lookup.response, zip_code: @lookup.zip_code } }
+    patch lookup_url(@lookup), params: { lookup: { cached_at: @lookup.cached_at, scale: @lookup.scale, temperature: @lookup.temperature, high: @lookup.high, low: @lookup.low, condition: @lookup.condition, icon: @lookup.icon, zip_code: @lookup.zip_code } }
     assert_redirected_to lookup_url(@lookup)
   end
 

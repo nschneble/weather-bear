@@ -1,11 +1,21 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  zip_code: MyString
+  zip_code: 12345
   cached_at: 2024-01-23 20:00:37
-  response: 
+  scale: fahrenheit
+  temperature: 70
+  high: 80
+  low: 60
+  condition: Overcast
+  icon: //cdn.weatherapi.com/weather/64x64/day/122.png
 
 two:
-  zip_code: MyString
+  zip_code: 12345
   cached_at: 2024-01-23 20:00:37
-  response: 
+  scale: fahrenheit
+  temperature: 70
+  high: 80
+  low: 60
+  condition: Overcast
+  icon: //cdn.weatherapi.com/weather/64x64/day/122.png

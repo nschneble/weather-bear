@@ -15,7 +15,12 @@ class LookupsTest < ApplicationSystemTestCase
     click_on "New lookup"
 
     fill_in "Cached at", with: @lookup.cached_at
-    fill_in "Response", with: @lookup.response
+    fill_in "Scale", with: @lookup.scale
+    fill_in "Temperature", with: @lookup.temperature
+    fill_in "High", with: @lookup.high
+    fill_in "Low", with: @lookup.low
+    fill_in "Condition", with: @lookup.condition
+    fill_in "Icon", with: @lookup.icon
     fill_in "Zip code", with: @lookup.zip_code
     click_on "Create Lookup"
 
@@ -28,7 +33,12 @@ class LookupsTest < ApplicationSystemTestCase
     click_on "Edit this lookup", match: :first
 
     fill_in "Cached at", with: @lookup.cached_at
-    fill_in "Response", with: @lookup.response
+    fill_in "Scale", with: @lookup.scale
+    fill_in "Temperature", with: @lookup.temperature
+    fill_in "High", with: @lookup.high
+    fill_in "Low", with: @lookup.low
+    fill_in "Condition", with: @lookup.condition
+    fill_in "Icon", with: @lookup.icon
     fill_in "Zip code", with: @lookup.zip_code
     click_on "Update Lookup"
 
