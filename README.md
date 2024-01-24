@@ -12,9 +12,10 @@
 * Clone this repo!
 * Copy application.yml.template => application.yml
 * Fill in valid API keys for [geocoding](https://geocode.maps.co) and [weather](https://www.weatherapi.com)
-* Create the database (./bin/rails db:create)
-* Run migrations (./bin/rails db:migrate)
-* Start up the server! (./bin/dev)
+* Run `bundle install`
+* Create the database (`./bin/rails db:create`)
+* Run migrations (`./bin/rails db:migrate`)
+* Start up the server! (`./bin/dev`)
 * Visit [localhost:3000](http://127.0.0.1:3000) in your web browser
 
 ## What's It Do?
