@@ -10,14 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_24_010037) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_24_180122) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "lookups", force: :cascade do |t|
     t.string "zip_code"
     t.datetime "cached_at", precision: nil
-    t.json "response"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
