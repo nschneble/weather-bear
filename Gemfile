@@ -71,3 +71,6 @@ end
 
 # Ain't no party like a httparty
 gem "httparty"
+
+# Catch unsafe migrations in development
+gem "strong_migrations"
