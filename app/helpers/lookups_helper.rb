@@ -37,8 +37,10 @@ module LookupsHelper
 
 		data = JSON.parse(response.body)
 
-		match_data = GEOCODING_EXTRACT_ZIP_CODE_REGEX.match(data[0]['display_name'])
-		return match_data['zip_code'] if match_data.present? && query_is_zip_code(match_data['zip_code'])
+		if data.present?
+			match_data = GEOCODING_EXTRACT_ZIP_CODE_REGEX.match(data[0]['display_name'])
+			return match_data['zip_code'] if match_data.present? && query_is_zip_code(match_data['zip_code'])
+		end
 
 		query
 	end
