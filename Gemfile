@@ -74,3 +74,7 @@ gem "httparty"
 
 # Catch unsafe migrations in development
 gem "strong_migrations"
+
+# Simple Rails app configuration
+# Keeps sensitive information out of Git
+gem "figaro"
