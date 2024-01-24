@@ -75,16 +75,22 @@ class LookupsController < ApplicationController
     end
 
     def set_zip_code_from_query
-      query = params[:query]
-
-      unless helpers.query_is_zip_code(query)
-        params[:query] = helpers.lookup_zip_code_params_from_query(query)
-      end
-
+      # skip this and move on if we've already got a zip code
       unless helpers.query_is_zip_code(params[:query])
-        respond_to do |format|
-          format.html { redirect_to root_path, notice: "Sorry, but we couldn't make sense of that address. Try again?" }
-          format.json { render json: @lookup.errors, status: :unprocessable_entity }
+        # tries to extract the zip code directly from the address
+        params[:query] = helpers.extract_zip_code_params_from_query(params[:query])
+
+        unless helpers.query_is_zip_code(params[:query])
+          # tries to use reverse geocoding to look up the zip code
+          params[:query] = helpers.lookup_zip_code_params_from_query(params[:query])
+
+          unless helpers.query_is_zip_code(params[:query])
+            # looks like all our efforts failed and we couldn't find a zip code
+            respond_to do |format|
+              format.html { redirect_to root_path, notice: "Sorry, but we couldn't make sense of that address. Try again?" }
+              format.json { render json: @lookup.errors, status: :unprocessable_entity }
+            end
+          end
         end
       end
     end
