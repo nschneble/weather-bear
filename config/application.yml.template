@@ -1,0 +1,5 @@
+# create a copy of this file and rename it to "application.yml", then
+# update the secrets below and be on your merry way
+
+# used to query WeatherAPI.com
+weather_api_key: "3a7f8b4e2d1c6f0d5e9a2c8b7f3e1d4"
