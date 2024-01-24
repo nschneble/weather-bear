@@ -1,8 +1,28 @@
-<div>
+<div class="w-full mr-8">
   <h1 class="font-bold text-4xl text-blue-500">WeatherBear</h1>
   <p class="italic">Just the bare essentials of a daily forecast</p>
   <hr>
-  <br><br>
-  <p class="cursor-pointer text-center" data-controller="joke" data-action="click->joke#handleClick"></p>
-  <img src="assets/hans-the-bear.png" />
+
+  <div class="my-8">
+    <%= form_with(model: @lookup, url: lookups_path,  data: {turbo: false}) do |form| %>
+
+      <div>
+        <%= form.search_field :query, placeholder: "Enter a five-digit US zip code", :autofocus => true %>
+        <%= form.submit "Check Weather", class: "cursor-pointer ml-4 p-2 bg-blue-500 hover:bg-blue-600 active:bg-blue-700 border border-blue-600 hover:border-blue-700 active:border-blue-800 text-white" %>
+      </div>
+
+      <div class="mt-2">
+        <%= form.radio_button :scale, "fahrenheit", checked: true %>
+        <%= form.label :scale_fahrenheit, "Fahrenheit" %>
+        <%= form.radio_button :scale, "celsius", class: "ml-2" %>
+        <%= form.label :scale_celsius, "Celsius" %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="mt-16">
+    <p class="font-bold text-right">Hans (the bear):</p>
+    <p class="cursor-pointer underline decoration-dotted text-right" data-controller="joke" data-action="click->joke#handleClick"></p>
+    <img class="mt-4 float-right" src="assets/hans-the-bear.jpg" />
+  </div>
 </div>
