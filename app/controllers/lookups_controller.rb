@@ -26,7 +26,7 @@ class LookupsController < ApplicationController
     # checks if we already have a recently cached lookup to display
     if @lookup.present?
       respond_to do |format|
-        format.html { redirect_to lookup_url(@lookup), notice: "These weather conditions were loaded from a cache from #{helpers.time_ago_in_words(@lookup.cached_at)} ago" }
+        format.html { redirect_to lookup_url(@lookup), notice: "These weather conditions were last updated #{helpers.time_ago_in_words(@lookup.cached_at)} ago" }
         format.json { render :show, status: :ok, location: @lookup }
       end
     else

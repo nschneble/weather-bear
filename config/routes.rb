@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  resources :forecasts
-  resources :lookups
+  resources :lookups, only: %i[ show create ]
 
   # health status that returns 200 if the app boots with no exceptions
   # can be used to verify the app is live

@@ -1,47 +1,15 @@
-<div id="<%= dom_id lookup %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Zip code:</strong>
-    <%= lookup.zip_code %>
+<div class="mx-auto my-8" id="<%= dom_id lookup %>">
+  <h2 class="font-bold text-2xl">Current Weather for <%= lookup.zip_code %></h2>
+  <img class="float-left mb-96" src="<%= lookup.icon %>" />
+
+  <p class="my-4">
+    <strong>Current Temperature:</strong> <%= lookup.with_scale(:temperature) %>
+    <br>
+    <strong>Conditions:</strong> <%= lookup.condition %>
   </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Cached at:</strong>
-    <%= lookup.cached_at %>
+  <p class="my-4">
+    <strong>High:</strong> <%= lookup.with_scale(:high) %> /
+    <strong>Low:</strong> <%= lookup.with_scale(:low) %>
   </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Scale:</strong>
-    <%= lookup.scale %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Temperature:</strong>
-    <%= lookup.temperature %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">High:</strong>
-    <%= lookup.high %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Low:</strong>
-    <%= lookup.low %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Condition:</strong>
-    <%= lookup.condition %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Icon:</strong>
-    <%= lookup.icon %>
-  </p>
-
-  <% if action_name != "show" %>
-    <%= link_to "Show this lookup", lookup, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to "Edit this lookup", edit_lookup_path(lookup), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
-  <% end %>
 </div>
