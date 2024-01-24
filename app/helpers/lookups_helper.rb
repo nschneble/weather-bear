@@ -7,9 +7,22 @@ module LookupsHelper
 
 	GEOCODING_EXTRACT_ZIP_CODE_REGEX = /^.+, (?<zip_code>\d{5}), United States$/
 	ZIP_CODE_REGEX = /^\d{5}$/
+	ZIP_CODE_PARTIAL_REGEX = /.*(\d{5})/
 
 	def query_is_zip_code(query)
 		ZIP_CODE_REGEX.match(query).present?
+	end
+
+	def query_contains_zip_code(query)
+		ZIP_CODE_PARTIAL_REGEX.match(query).present?
+	end
+
+	def extract_zip_code_params_from_query(query)
+		# can't do anything here because there's no zip code in the query
+		return query unless query_contains_zip_code(query)
+
+		# returns the last 5-digit match in case there's a long street number
+		ZIP_CODE_PARTIAL_REGEX.match(query)[-1]
 	end
 
 	def lookup_zip_code_params_from_query(query)
