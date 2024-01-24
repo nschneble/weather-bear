@@ -42,3 +42,6 @@
 
 # macOS files
 .DS_Store
+
+# keeps secrets out of Git
+config/application.yml
