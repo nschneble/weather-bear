@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  zip_code: MyString
+  cached_at: 2024-01-23 20:00:37
+  response: 
+
+two:
+  zip_code: MyString
+  cached_at: 2024-01-23 20:00:37
+  response: 
